@@ -1,0 +1,7 @@
+C:\Users\isacv\OneDrive\Área de Trabalho\exerciciosCSharp\POO-Conceitos\Banco-POO\bin\Debug\Banco-POO.exe.config
+C:\Users\isacv\OneDrive\Área de Trabalho\exerciciosCSharp\POO-Conceitos\Banco-POO\bin\Debug\Banco-POO.exe
+C:\Users\isacv\OneDrive\Área de Trabalho\exerciciosCSharp\POO-Conceitos\Banco-POO\bin\Debug\Banco-POO.pdb
+C:\Users\isacv\OneDrive\Área de Trabalho\exerciciosCSharp\POO-Conceitos\Banco-POO\obj\Debug\Banco-POO.csproj.AssemblyReference.cache
+C:\Users\isacv\OneDrive\Área de Trabalho\exerciciosCSharp\POO-Conceitos\Banco-POO\obj\Debug\Banco-POO.csproj.CoreCompileInputs.cache
+C:\Users\isacv\OneDrive\Área de Trabalho\exerciciosCSharp\POO-Conceitos\Banco-POO\obj\Debug\Banco-POO.exe
+C:\Users\isacv\OneDrive\Área de Trabalho\exerciciosCSharp\POO-Conceitos\Banco-POO\obj\Debug\Banco-POO.pdb
