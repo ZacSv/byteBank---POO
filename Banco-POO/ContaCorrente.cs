@@ -9,6 +9,7 @@ namespace Banco_POO
 {
     internal class ContaCorrente
     {
+        public static double TaxaParaOperacao { get; private set; }
         private Cliente _Titular;
         public Cliente titular
         {
@@ -16,7 +17,7 @@ namespace Banco_POO
             set { _Titular = value; }
         }
         public int NumeroAgencia { get; set; }
-
+          
         public int NumeroConta { get; set; }
 
         private double _Saldo;
@@ -37,6 +38,12 @@ namespace Banco_POO
         }
 
         public static int quantidadeContas { get; set; }
+
+
+        public double DescontaTaxa(double valorOperacao)
+        {
+            return (valorOperacao * TaxaParaOperacao) / 100; //Encontra o valor da taxa baseado no valor da operação;
+        }
 
         public void SacaDinheiro(double Valor)
         {
@@ -69,7 +76,8 @@ namespace Banco_POO
             if(valor <= this._Saldo)
             {
                 contaDestino._Saldo += valor;
-                Console.WriteLine("Tranferência efetuada com sucesso");
+                this._Saldo = this._Saldo - DescontaTaxa(valor) - valor; //Calculando o valor que restará na conta
+                Console.WriteLine($"Tranferência efetuada com sucesso ! Seu saldo atual é {this._Saldo}");
             }
             else
             {
@@ -81,6 +89,7 @@ namespace Banco_POO
             this.NumeroAgencia = agencia;
             this.NumeroConta = numeroConta;
             quantidadeContas++;
+            TaxaParaOperacao = 20 / quantidadeContas; //A taxa é regressiva, quanto mais contas menor a taxa
         }
     }
 }    
