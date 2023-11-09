@@ -13,21 +13,11 @@ namespace Banco_POO
         static void Main(string[] args)
         {
 
-            int a = 10;
-            int b = 0;
-            try
-            {
-                int c = a / b;
-                Console.WriteLine(c);
-            }
-            catch(Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-            
-           
+            ContaCorrente Isac = new ContaCorrente(123, 123);
+            Isac.Deposita(50);
+            Isac.SacaDinheiro(100);
+ 
             Console.ReadKey();
-
         }
     }   
 }

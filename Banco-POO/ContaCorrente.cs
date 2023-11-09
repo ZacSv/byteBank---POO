@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Banco_POO;
+using Banco_POO.Exceptions;
 
 namespace Banco_POO
 {
@@ -16,10 +17,8 @@ namespace Banco_POO
             get { return _Titular; }
             set { _Titular = value; }
         }
-        public int NumeroAgencia { get; set; }
-          
-        public int NumeroConta { get; set; }
-
+        public int NumeroAgencia { get; }
+        public int NumeroConta{ get; }
         private double _Saldo;
         public double Saldo
         {
@@ -36,8 +35,7 @@ namespace Banco_POO
                 _Saldo = value;
             } 
         }
-
-        public static int quantidadeContas { get; set; }
+        public static int quantidadeContas { get; private set; }
 
 
         public double DescontaTaxa(double valorOperacao)
@@ -45,18 +43,32 @@ namespace Banco_POO
             return (valorOperacao * TaxaParaOperacao) / 100; //Encontra o valor da taxa baseado no valor da operação;
         }
 
-        public void SacaDinheiro(double Valor)
+        public void SacaDinheiro(double ValorSaque)
         {
-               if(Valor <= this._Saldo)
-               {
-                this._Saldo -= Valor;
-               
-               }
-            else
+            try
             {
-                Console.WriteLine("O valor que deseja sacar é menor que o saldo de sua conta, seu saldo atual é: " + _Saldo);
-            }       
+                if (ValorSaque > this._Saldo)
+                {
+                    throw new SaldoInsuficienteException($"Saldo insuficiente para a operação, saldo atual de: {this._Saldo}");
+                }
+                else
+                {
+                    this.Saldo -= ValorSaque;
+                    Console.WriteLine($"Saque efetuado com sucesso, saldo restante: {this._Saldo}");
+                }
+            }
+            catch (SaldoInsuficienteException e)
+            {
+                Console.WriteLine($"Erro: {e.Message}");
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine($"Erro: {e.Message}");
+            }
         }
+        
+
+    
 
         public void Deposita(double Valor)
         {
@@ -84,10 +96,21 @@ namespace Banco_POO
                 Console.WriteLine("Você está tentando transferir um valor maior do que o possuido, seu saldo atual é: " + this._Saldo);
             }
         }
-        public ContaCorrente(int agencia, int numeroConta)
+        
+        public ContaCorrente(int numeroAgencia, int numeroConta)
         {
-            this.NumeroAgencia = agencia;
-            this.NumeroConta = numeroConta;
+
+            if(numeroAgencia <= 0)
+            {
+                throw new ArgumentException("O numero da agencia deve ser maior e diferente de zero", nameof(numeroAgencia));
+            }
+            if(numeroConta <= 0)
+            {
+                throw new ArgumentException("O numero da conta do cliente deve ser maior e diferente de zero", nameof(numeroConta));
+            }
+
+            NumeroAgencia = numeroAgencia;
+            NumeroConta = numeroConta;
             quantidadeContas++;
             TaxaParaOperacao = 20 / quantidadeContas; //A taxa é regressiva, quanto mais contas menor a taxa
         }
