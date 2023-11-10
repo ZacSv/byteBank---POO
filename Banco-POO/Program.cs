@@ -12,10 +12,10 @@ namespace Banco_POO
     {
         static void Main(string[] args)
         {
-
+            ContaCorrente A = new ContaCorrente(123, 123);
             ContaCorrente Isac = new ContaCorrente(123, 123);
-            Isac.Deposita(50);
-            Isac.SacaDinheiro(100);
+            Isac.Deposita(-100);
+            Isac.FazOPix(-50, A);
  
             Console.ReadKey();
         }

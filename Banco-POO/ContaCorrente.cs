@@ -51,6 +51,10 @@ namespace Banco_POO
                 {
                     throw new SaldoInsuficienteException($"Saldo insuficiente para a operação, saldo atual de: {this._Saldo}");
                 }
+                if(ValorSaque <= 0)
+                {
+                    throw new ArgumentException($"Você está tentando sacar um valor inválido.", nameof(ValorSaque));
+                }
                 else
                 {
                     this.Saldo -= ValorSaque;
@@ -61,14 +65,15 @@ namespace Banco_POO
             {
                 Console.WriteLine($"Erro: {e.Message}");
             }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine($"Erro: {e.Message}");
+            }
             catch(Exception e)
             {
                 Console.WriteLine($"Erro: {e.Message}");
             }
         }
-        
-
-    
 
         public void Deposita(double Valor)
         {
@@ -83,18 +88,24 @@ namespace Banco_POO
             }
         }
 
-        public void FazOPix(double valor, ContaCorrente contaDestino)
+        public void FazOPix(double valorTransferencia, ContaCorrente contaDestino)
         {
-            if(valor <= this._Saldo)
+            try
             {
-                contaDestino._Saldo += valor;
-                this._Saldo = this._Saldo - DescontaTaxa(valor) - valor; //Calculando o valor que restará na conta
-                Console.WriteLine($"Tranferência efetuada com sucesso ! Seu saldo atual é {this._Saldo}");
+                if (valorTransferencia < 0)
+                {
+                    throw new ArgumentException("Valor inválido para a tranferência", nameof(valorTransferencia));
+                }
+
+
+                SacaDinheiro(valorTransferencia);
+                contaDestino.Deposita(valorTransferencia);
             }
-            else
+            catch (ArgumentException e)
             {
-                Console.WriteLine("Você está tentando transferir um valor maior do que o possuido, seu saldo atual é: " + this._Saldo);
+                Console.WriteLine($"Erro: {e.Message}");
             }
+  
         }
         
         public ContaCorrente(int numeroAgencia, int numeroConta)
