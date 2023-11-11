@@ -14,9 +14,9 @@ namespace Banco_POO
         {
             ContaCorrente A = new ContaCorrente(123, 123);
             ContaCorrente Isac = new ContaCorrente(123, 123);
-            Isac.Deposita(-100);
-            Isac.FazOPix(-50, A);
- 
+            Isac.Deposita(100);
+
+            Isac.SacaDinheiro(10); 
             Console.ReadKey();
         }
     }   

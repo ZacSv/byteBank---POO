@@ -38,7 +38,7 @@ namespace Banco_POO
         public static int quantidadeContas { get; private set; }
 
 
-        public double DescontaTaxa(double valorOperacao)
+        private double DescontaTaxa(double valorOperacao)
         {
             return (valorOperacao * TaxaParaOperacao) / 100; //Encontra o valor da taxa baseado no valor da operação;
         }
@@ -49,7 +49,7 @@ namespace Banco_POO
             {
                 if (ValorSaque > this._Saldo)
                 {
-                    throw new SaldoInsuficienteException($"Saldo insuficiente para a operação, saldo atual de: {this._Saldo}");
+                    throw new SaldoInsuficienteException($"Saldo insuficiente para a operação, saldo atual de: R$ {this._Saldo}");
                 }
                 if(ValorSaque <= 0)
                 {
@@ -57,8 +57,9 @@ namespace Banco_POO
                 }
                 else
                 {
-                    this.Saldo -= ValorSaque;
-                    Console.WriteLine($"Saque efetuado com sucesso, saldo restante: {this._Saldo}");
+
+                    this.Saldo -= (ValorSaque + DescontaTaxa(ValorSaque)) ;
+                    Console.WriteLine($"Saque efetuado com sucesso, saldo restante: R$ {this._Saldo}");
                 }
             }
             catch (SaldoInsuficienteException e)
@@ -77,14 +78,21 @@ namespace Banco_POO
 
         public void Deposita(double Valor)
         {
-            if (Valor > 0)
+            try
             {
-                this._Saldo += Valor;
-                Console.WriteLine("Deposito efetuado. Saldo atual: " + this._Saldo);
+                if (Valor > 0)
+                {
+                    this._Saldo += Valor;
+                    Console.WriteLine("Deposito efetuado. Saldo atual: R$" + this._Saldo);
+                }
+                else
+                {
+                    throw new ArgumentException($"Você está tentando depositar um valor inválido");
+                }
             }
-            else
-            {
-                Console.WriteLine("Você está tentando depositar um valor negativo");
+       
+            catch(ArgumentException e){
+                Console.WriteLine($"Erro: {e.Message}");
             }
         }
 
