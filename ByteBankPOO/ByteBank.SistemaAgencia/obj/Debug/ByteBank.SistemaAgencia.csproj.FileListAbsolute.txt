@@ -1,0 +1,10 @@
+C:\Users\isacv\OneDrive\Área de Trabalho\byteBank(POO)\ByteBankPOO\ByteBank.SistemaAgencia\bin\Debug\ByteBank.SistemaAgencia.exe.config
+C:\Users\isacv\OneDrive\Área de Trabalho\byteBank(POO)\ByteBankPOO\ByteBank.SistemaAgencia\bin\Debug\ByteBank.SistemaAgencia.exe
+C:\Users\isacv\OneDrive\Área de Trabalho\byteBank(POO)\ByteBankPOO\ByteBank.SistemaAgencia\bin\Debug\ByteBank.SistemaAgencia.pdb
+C:\Users\isacv\OneDrive\Área de Trabalho\byteBank(POO)\ByteBankPOO\ByteBank.SistemaAgencia\bin\Debug\ByteBank.Modelos.dll
+C:\Users\isacv\OneDrive\Área de Trabalho\byteBank(POO)\ByteBankPOO\ByteBank.SistemaAgencia\bin\Debug\ByteBank.Modelos.pdb
+C:\Users\isacv\OneDrive\Área de Trabalho\byteBank(POO)\ByteBankPOO\ByteBank.SistemaAgencia\obj\Debug\ByteBank.SistemaAgencia.csproj.AssemblyReference.cache
+C:\Users\isacv\OneDrive\Área de Trabalho\byteBank(POO)\ByteBankPOO\ByteBank.SistemaAgencia\obj\Debug\ByteBank.SistemaAgencia.csproj.CoreCompileInputs.cache
+C:\Users\isacv\OneDrive\Área de Trabalho\byteBank(POO)\ByteBankPOO\ByteBank.SistemaAgencia\obj\Debug\ByteBank.SistemaAgencia.csproj.CopyComplete
+C:\Users\isacv\OneDrive\Área de Trabalho\byteBank(POO)\ByteBankPOO\ByteBank.SistemaAgencia\obj\Debug\ByteBank.SistemaAgencia.exe
+C:\Users\isacv\OneDrive\Área de Trabalho\byteBank(POO)\ByteBankPOO\ByteBank.SistemaAgencia\obj\Debug\ByteBank.SistemaAgencia.pdb

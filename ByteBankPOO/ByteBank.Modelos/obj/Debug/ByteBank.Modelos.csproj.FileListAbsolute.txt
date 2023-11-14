@@ -1,0 +1,6 @@
+C:\Users\isacv\OneDrive\Área de Trabalho\byteBank(POO)\ByteBankPOO\ByteBank.Modelos\bin\Debug\ByteBank.Modelos.dll
+C:\Users\isacv\OneDrive\Área de Trabalho\byteBank(POO)\ByteBankPOO\ByteBank.Modelos\bin\Debug\ByteBank.Modelos.pdb
+C:\Users\isacv\OneDrive\Área de Trabalho\byteBank(POO)\ByteBankPOO\ByteBank.Modelos\obj\Debug\ByteBank.Modelos.csproj.AssemblyReference.cache
+C:\Users\isacv\OneDrive\Área de Trabalho\byteBank(POO)\ByteBankPOO\ByteBank.Modelos\obj\Debug\ByteBank.Modelos.csproj.CoreCompileInputs.cache
+C:\Users\isacv\OneDrive\Área de Trabalho\byteBank(POO)\ByteBankPOO\ByteBank.Modelos\obj\Debug\ByteBank.Modelos.dll
+C:\Users\isacv\OneDrive\Área de Trabalho\byteBank(POO)\ByteBankPOO\ByteBank.Modelos\obj\Debug\ByteBank.Modelos.pdb
